@@ -1,3 +1,4 @@
+
 natusfera.pic <- 
   
   function(file.path, pic.size){
@@ -8,8 +9,8 @@ natusfera.pic <-
   sp <-  as.character(natdf$scientific_name[nchar(im_url)>0])
   im_url <- im_url[nchar(im_url)>0]
   photo_name <- paste0(id,"-", sp, ".jpg")
-  if(!file.exists("observaciones_natusfera")){
-    dir.create("imagenes_observaciones_natusfera")}
-    setwd("./observaciones_natusfera")
+  if(!file.exists("observation_pics_natusfera")){
+    dir.create("observation_pics_natusfera")}
+    setwd("./observation_pics_natusfera")
     lapply(1:length(im_url), function(i) download.file(im_url[i], photo_name[i], mode = 'wb'))
     }
